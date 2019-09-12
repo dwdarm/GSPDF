@@ -44,24 +44,21 @@ typedef enum {
 struct _GspdfTaskScheduler;
 typedef struct _GspdfTaskScheduler GspdfTaskScheduler;
 
-typedef void (*gspdf_task_callback) (GspdfTask *task,
-																		 gpointer   user_data);
+typedef void (*gspdf_task_callback) (GspdfTask *task, gpointer user_data);
 
 void gspdf_task_cancel (GspdfTask *task);
 
 GspdfTaskStatus gspdf_task_get_status (GspdfTask *task);
 
-void gspdf_task_set_finished_callback (GspdfTask           *task,
-																			 gspdf_task_callback  callback,
-																			 gpointer             user_data);
+void gspdf_task_set_finished_callback (
+	GspdfTask *task, gspdf_task_callback callback, gpointer user_data);
 
 GspdfTaskScheduler *gspdf_task_scheduler_new (void);
 
 void gspdf_task_scheduler_free (GspdfTaskScheduler *instance);
 
-void gspdf_task_scheduler_push (GspdfTaskScheduler *instance,
-													      GspdfTask          *task,
-																gboolean            urgent);
+void gspdf_task_scheduler_push (
+	GspdfTaskScheduler *instance, GspdfTask *task, gboolean urgent);
 
 G_END_DECLS
 

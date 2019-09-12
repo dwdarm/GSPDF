@@ -157,9 +157,8 @@ gspdf_task_get_status (GspdfTask *task)
 }
 
 void
-gspdf_task_set_finished_callback (GspdfTask *task,
-	                                gspdf_task_callback callback,
-																	gpointer user_data)
+gspdf_task_set_finished_callback (
+	GspdfTask *task, gspdf_task_callback callback, gpointer user_data)
 {
 	g_return_if_fail (task != NULL);
 	g_return_if_fail (GSPDF_IS_TASK (task));
@@ -204,13 +203,12 @@ gspdf_task_scheduler_new ()
 void
 gspdf_task_scheduler_free (GspdfTaskScheduler *instance)
 {
-  g_return_if_fail (instance != NULL);
+	g_return_if_fail (instance != NULL);
 }
 
 void
-gspdf_task_scheduler_push (GspdfTaskScheduler *instance,
-													 GspdfTask          *task,
-													 gboolean            urgent)
+gspdf_task_scheduler_push (
+	GspdfTaskScheduler *instance, GspdfTask *task, gboolean urgent)
 {
 	g_return_if_fail (instance != NULL);
  	g_return_if_fail (task != NULL);
